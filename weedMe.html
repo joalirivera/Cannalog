@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='WeedMe'>
+    <head>
+        <title>Weed The People</title>
+        <!--<script type="text/javascript" src="http://astroapp.com/astro/astroapi?key=YOUR_ASTROAPP_API_KEY"></script>-->
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+        <script src= "weedMe.js"></script>
+        <link rel="stylesheet" type="text/css" href="weedMe.css">
+        <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+     </head>
+  <!--   <div>-->
+  <!--       <nav class="navbar navbar-inverse">-->
+  <!--...-->
+  <!--      </nav>-->
+  <!--   </div>-->
+    
+    <body ng-controller = "WeedController as dCtrl" class= "container">
+      <div class="bg">
+       <h1>CannaLog</h1>
+       <br>
+       <br>
+       <br>
+        <div class="search_keywords">
+			<label for="search_keywords">Keywords</label>
+			<input ng-model= "dCtrl.searchTerm" type="text" name="search_keywords" id="search_keywords" placeholder="Search by Name" value="">
+		    <button ng-click= "dCtrl.searchWeed(dCtrl.searchTerm)">Search</button>
+		    <br><br>
+            <ul class="weedlist">
+                <li ng-repeat= "weed in dCtrl.displayarray">
+                    
+                    <ul class="weedlist">
+                        <li>Name: {{weed.name}}</li>
+                        <li>Strain type: {{weed["strain type"]}}</li>
+                        <li>UCPC: {{weed.ucpc}}</li>
+                        <li>Qualities: {{weed.qualities}}</li>
+                        <li>Preferred induce time: {{weed["preferred induce time"]}}</li>
+                        <img class="image" ng-src="{{weed.image}}"/>
+                        <br><br><br>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </body>
+</html>
+
+       
+         
+    
